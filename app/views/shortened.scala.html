@@ -1,0 +1,14 @@
+@(url: String, shortened: String)
+
+@main("Shortened url") {
+
+    <ul>
+        <li> Original url: <a href = "@url"> @url </a></li>
+        <li> Shortened url: <a href = "@shortened" target="_blank"> @shortened </a> </li>
+    </ul>
+
+    <p class="buttons">
+        <a href="@shortenerApp.routes.ShortenerApp.index"> Back to the form </a>
+    </p>
+
+}

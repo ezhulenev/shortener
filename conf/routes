@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                          shortenerApp.ShortenerApp.index
+
+# Redirect action
+GET     /:s                        shortenerApp.ShortenerApp.redirect(s: String)
+
+# Shorten action
+POST    /                          shortenerApp.ShortenerApp.shortenUrl
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

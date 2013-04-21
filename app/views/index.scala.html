@@ -1,0 +1,21 @@
+@(urlForm: Form[String])
+
+@import helper._
+
+@main(title = "Shortener App") {
+
+    <h1>Enter url:</h1>
+
+    @form(action = shortenerApp.routes.ShortenerApp.shortenUrl, args = 'id -> "urlform", 'method -> "POST") {
+
+        @inputText(
+            field = urlForm("url"),
+            args = '_label -> "What's your url?", 'placeholder -> "http://pellucid.com"
+        )
+
+        <p class="buttons">
+            <input type="submit" id="submit">
+        <p>
+    }
+
+}
