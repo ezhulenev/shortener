@@ -11,7 +11,7 @@ trait Shortener {
 
   def shorten(url: String): Validation[UrlError, UrlShortened]
 
-  def find(shortened: String): Option[String]
+  def resolve(shortened: String): Option[String]
 }
 
 trait InMemoryShortener extends Shortener {
@@ -35,7 +35,7 @@ trait InMemoryShortener extends Shortener {
     }
   )
 
-  def find(shortened: String) = {
+  def resolve(shortened: String) = {
     val view = shorten2url.single
     view() get (shortened)
   }

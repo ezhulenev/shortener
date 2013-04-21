@@ -41,7 +41,7 @@ trait ShortenerApp extends Controller {
     _ =>
     // It would be better to use MovedPermanently instead of TemporaryRedirect,
     // however redirects are cached during testing
-      find(shortened).map(TemporaryRedirect(_)) getOrElse {
+      resolve(shortened).map(TemporaryRedirect(_)) getOrElse {
         Ok(html.index(UrlForm.withError("url", ShortenedNotFound)))
       }
   }

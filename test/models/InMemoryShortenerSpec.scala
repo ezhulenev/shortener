@@ -12,8 +12,8 @@ class InMemoryShortenerSpec extends Specification {
 
   "InMemoryShortener" should {
     "return None for not shortened url" in {
-      shortener.find(Url1) must beNone
-      shortener.find(Url2) must beNone
+      shortener.resolve(Url1) must beNone
+      shortener.resolve(Url2) must beNone
     }
 
     "fail to shortenUrl bad url" in {
